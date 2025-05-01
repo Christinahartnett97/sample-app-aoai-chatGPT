@@ -117,9 +117,7 @@ const Chat = () => {
   }, [appStateContext?.state.chatHistoryLoadingState])
 
   const getUserInfoList = async () => {
-    if (!AUTH_ENABLED) {
-      setShowAuthMessage(false)
-      return
+        setShowAuthMessage(false);
     }
     const userInfoList = await getUserInfo()
     if (userInfoList.length === 0 && window.location.hostname !== '127.0.0.1') {
